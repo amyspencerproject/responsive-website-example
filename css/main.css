@@ -1,0 +1,284 @@
+/****** BASE STYLES AND FLEXBOX*****/
+/* USING MOBILE FIRST APPROACH FOR RESPONSIVE */
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+h1,
+h2,
+h3 {
+	color: black;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+h1 {
+	font-size: 1.88em;
+}
+h2 {
+	font-size: 1.3em;
+}
+h3 {
+	font-size: 0.75em;
+}
+
+p {
+	font-size: 0.88em;
+	line-height: 1.3em;
+    padding: 0 1.3em;
+}
+
+/***** HEADER STYLES *****/
+
+header {
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+
+header h1 {
+	margin: 0.315em 0;
+	padding: 0.63em 0; 
+	border-bottom: 0.188em solid #34a7b2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+header h1 span {
+	color: #34a7b2;
+}
+
+header nav {
+	padding: 0.63em 0;
+}
+header nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+}
+
+header nav ul li {
+	text-transform: uppercase;
+	list-style-type: none;
+	font-weight: 700;
+	font-size: 0.88em;
+	padding: 0.63em 0em;
+}
+header nav ul li a {
+	text-decoration: none;
+	color:#34a7b2;
+}
+
+/***** TOP SECTION STYLES *****/
+
+.top-section {
+	margin: 0.63em auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+.main-image {
+	height: auto;
+}
+.main-image img {
+	width: 100%;
+	border-top: 0.188em solid #34a7b2;
+	border-bottom: 0.188em solid #34a7b2;
+}
+
+.main-title {
+	height: auto;
+}
+.main-title h2 {
+	text-align: center;
+	padding: 0.315em 0.63em;
+	color: #34a7b2;
+}
+.main-title p {
+	/* padding: 0.31em 0.63em; */
+	font-size: 1em;
+	line-height: 1.56em;
+	text-align: left;
+}
+
+/***** bOTTOM SECTION STYLES *****/
+
+.bottom-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	margin: .63em 0em;
+}
+
+.section-one,
+.section-two,
+.section-three {
+	width: 100%;
+	height: auto;
+	border-top:.063em solid #ccc;
+	margin: 0.63em 0em;
+}
+
+.section-one h3,
+.section-two h3,
+.section-three h3 {
+	padding: 0.63em 0em;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+}
+.menu li {
+	padding: 0.63em 0;
+	color:#34a7b2;
+}
+
+.reviews {
+	color: #333;
+	font-size: 1em;
+	line-height: 1.3em;
+}
+
+.address {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+/***** FOOTER STYLES *****/
+
+footer {
+	height: auto;
+	width: 100%;
+	border-top: 0.188em solid #ccc;
+	margin: 0 auto;
+	padding: 0.315em 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+footer span {
+	font-family: 'Galada', cursive;
+	text-transform: lowercase;
+	color: #34a7b2;
+	font-size: 0.88em;
+}
+
+/******* MEDIA QUERIES  ********/
+
+/* ----------- Tablets larger than 768px wide ----------- */
+@media (min-width: 768px) {
+	.bottom-section {
+		border-top:.063em solid #ccc; /*gives solid border w/out tiny breaks btwn sections */
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start;
+		flex-flow: row nowrap;
+		margin: 0em 0em;
+	}
+
+	.section-one,
+	.section-two,
+	.section-three {
+		border-top: 0em solid #ccc; /* overrides border in bottom-section styles for mobile */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column wrap;
+		margin: 0em 0em;
+		width: 33%;
+	}
+
+	.section-two {
+		border-left: .063em solid #ccc;
+		border-right: .063em solid #ccc;
+	}
+}
+
+/* ----------- Desktop Screenlarger than 1200px wide ----------- */
+
+@media (min-width: 1200px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-flow: row nowrap;
+	} 
+
+	header h1 {
+		margin: 0.315em 0;
+		padding: 0.63em 0; 
+		border-bottom: 0em solid #34a7b2; /* Overide border */
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+    	text-align: left;
+	}
+
+	header nav {
+		width: 40%;
+	}
+
+	header nav ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-flow: row nowrap;
+	}
+
+	header nav ul li {
+		padding: 0em .88em;
+	}
+
+
+	/***** BOTTOM SECTION STYLES *****/
+	.section-one,
+	.section-three {
+		padding: .63em 0;
+	}
+
+	/* Trying to get vertical section borders to touch footer top border */
+	.section-two {
+		/* height: inherit; */
+		/* height: 100%; */
+		padding-top: 0.63em;
+		padding-bottom: 2.5%;
+	}
+	
+	
+}
